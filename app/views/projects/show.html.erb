@@ -1,0 +1,25 @@
+<h1><%= @project.name %></h1>
+
+
+<% if @project.employees.any? %>
+  <h4>Here are the employees for this project:</h4>
+
+  <% @project.employees.each do |employee| %>
+    <ul>
+      <li>
+        <%= link_to employee.name, project_employee_path(@project, employee) %>
+      </li>
+    </ul>
+  <% end %>
+<% else %>
+  <p>No employees are listed for this project.</p>
+<% end %>
+
+<p><%= link_to "Add a employee", new_project_employee_path(@project) %></p>
+
+<p><%= link_to "Edit", edit_project_path(@project) %></p>
+<p><%= link_to "Delete", project_path(@project),
+                         :data => {:confirm => "You sure?",
+                                   :method => "delete"} %></p>
+
+<p><%= link_to "Return to projects", projects_path %></p>
