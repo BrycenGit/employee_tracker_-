@@ -49,7 +49,7 @@ class DivisionsController < ApplicationController
 
   private
   def division_params
-    params.require(:Division).permit(:name)
+    params.require(:division).permit(:name)
   end
 
 end

@@ -7,7 +7,7 @@
   <% @project.employees.each do |employee| %>
     <ul>
       <li>
-        <%= link_to employee.name, project_employee_path(@project, employee) %>
+        <%= link_to employee.name, employee_path(employee) %>
       </li>
     </ul>
   <% end %>
@@ -15,7 +15,7 @@
   <p>No employees are listed for this project.</p>
 <% end %>
 
-<p><%= link_to "Add a employee", new_project_employee_path(@project) %></p>
+
 
 <p><%= link_to "Edit", edit_project_path(@project) %></p>
 <p><%= link_to "Delete", project_path(@project),
